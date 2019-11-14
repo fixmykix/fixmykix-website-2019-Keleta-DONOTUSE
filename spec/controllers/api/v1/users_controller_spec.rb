@@ -6,7 +6,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   
 
   describe 'POST - create user' do 
-    
     context 'has been successfully created' do 
       before(:each) do 
         @user_attributes = FactoryGirl.attributes_for(:user)
@@ -22,7 +21,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end 
 
     context 'when user is not successfully created' do 
-
       before(:each) do 
         invalid_user_attributes = {  password: '12345678', 
                                 password_confirmation: '12345678' }
@@ -58,7 +56,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   end 
 
   describe 'PATCH - update specific user information' do 
-
     context 'when user is successfully updated' do
       before(:each) do 
         @user = FactoryGirl.create(:user)
@@ -74,7 +71,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end 
 
     context 'when user is not updated correctly' do 
-
       before(:each) do 
         @user = FactoryGirl.create(:user)
         patch :update, params: { id: @user.id, user: { email: "bademailformat.com"} }
@@ -91,11 +87,9 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end 
 
       it { should respond_with 422}
-
     end 
 
     describe 'DELETE - delete user from database' do 
-
       context 'successful user deletion' do 
         before(:each) do 
           @user = FactoryGirl.create(:user)
@@ -103,15 +97,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
         end 
 
         it { should respond_with 204 }
-      end 
-
-      context 'unsuccessful user deletion' do 
-        before(:each) do 
-          @user = FactoryGirl.create(:user)
-          delete :destroy, params: { id: 0 }
-        end
-
-        it { should respond_with 401 }
       end 
     end 
 

@@ -28,9 +28,9 @@
         def destroy 
           @user = User.find(params[:id])
           if @user.destroy
-            head(:204)
+            head 204
           else 
-            head(:401)
+            head 401
           end
         end 
 
