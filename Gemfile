@@ -3,10 +3,35 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+
+########### MY GEMS ##############
+
+# Our preferred database
+gem 'pg', '~> 1.1', '>= 1.1.4'
+# Our beloved testing tool 
+gem 'rspec', '~> 3.9'
+# Fake data for testing purposes 
+gem 'faker', '~> 2.7'
+# Slim html templateing
+gem 'slim-rails', '~> 3.2'
+# Encryped users 
+gem 'devise', '~> 4.7', '>= 4.7.1'
+# Payment transcations 
+gem 'stripe', '~> 5.10'
+# Good ole jquery for fun animations 
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+# Simple form for forms
+gem 'simple_form', '~> 5.0', '>= 5.0.1'
+# Cleaner Urls for our users
+gem 'friendly_id', '~> 5.3'
+# Render JSON responses - Api
+gem 'jbuilder', '~> 2.9', '>= 2.9.1'
+
+
+############################ Given Gems #########################
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -34,6 +59,8 @@ group :development, :test do
 end
 
 group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.4'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
