@@ -8,10 +8,6 @@ ruby '2.6.3'
 
 # Our preferred database
 gem 'pg', '~> 1.1', '>= 1.1.4'
-# Our beloved testing tool 
-gem 'rspec', '~> 3.9'
-# Fake data for testing purposes 
-gem 'faker', '~> 2.7'
 # Slim html templateing
 gem 'slim-rails', '~> 3.2'
 # Encryped users 
@@ -26,6 +22,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'friendly_id', '~> 5.3'
 # Render JSON responses - Api
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
+
 
 
 ############################ Given Gems #########################
@@ -56,6 +53,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Our beloved testing tool 
+  gem 'rspec', '~> 3.9'
+  # Fake data for testing purposes 
+  gem 'faker', '~> 2.7'
 end
 
 group :development do
