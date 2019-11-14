@@ -44,7 +44,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end 
   end 
 
-  describe 'get users #show action' do 
+  describe 'GET - get specific user show page,' do 
     before(:each) do 
       @user = FactoryGirl.create(:user) 
       get :show, params: { id: @user.id }
@@ -54,6 +54,17 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       user_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(user_response[:email]).to eql(@user.email)
+    end 
+  end 
+
+  describe 'PATCH - update specific user information' do 
+
+
+    before(:each) do 
+
+      @user = FactoryGirl.create(:user)
+      patch :update, params: { id: @user.id, email: "abe@hello.com"}
+      expect(@user.email).to eql("abe@hello.com")
     end 
   end 
 end
