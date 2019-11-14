@@ -52,9 +52,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Our beloved testing tool 
-  gem 'rspec', '~> 3.9'
+  gem 'rspec-rails', '~> 3.9'
   # Fake data for testing purposes 
   gem 'faker', '~> 2.7'
+  # Will populate our models with faker data
+  gem 'factory_girl_rails', '~> 4.9'
 end
 
 group :development do
