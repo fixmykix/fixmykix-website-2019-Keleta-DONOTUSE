@@ -59,17 +59,41 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
   describe 'PATCH - update specific user information' do 
 
+    context 'when user is successfully updated' do
+      before(:each) do 
+        @user = FactoryGirl.create(:user)
+        patch :update, params: { id: @user.id, user: { email: "abe@hello.com"} }
+      end 
 
-    before(:each) do 
-      @user = FactoryGirl.create(:user)
-      patch :update, params: { id: @user.id, user: { email: "abe@hello.com"} }
+      it 'should update users email' do
+        user_response = JSON.parse(response.body, symbolize_names: true) 
+        expect(user_response[:email]).to eql("abe@hello.com")
+      end 
+
+      it { should respond_with 200 }
     end 
 
-    it 'should update users email' do
-      user_response = JSON.parse(response.body, symbolize_names: true) 
-      expect(user_response[:email]).to eql("abe@hello.com")
+    context 'when user is not updated correctly' do 
+
+      before(:each) do 
+        @user = FactoryGirl.create(:user)
+        patch :update, params: { id: @user.id, user: { email: "bademailformat.com"} }
+      end 
+
+      it 'should send an error message' do 
+        user_response = JSON.parse(response.body, symbolize_names: true)
+        expect(user_response).to have_key(:errors)
+      end 
+
+      it 'should send an error message' do 
+        user_response = JSON.parse(response.body, symbolize_names: true)
+        expect(user_response[:errors][:email]).to include 'is invalid'
+      end 
+
+      it { should respond_with 422}
+
+
     end 
 
-    it { should respond_with 200 }
   end 
 end
