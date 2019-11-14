@@ -57,6 +57,8 @@ group :development, :test do
   gem 'faker', '~> 2.7'
   # Will populate our models with faker data
   gem 'factory_girl_rails', '~> 4.9'
+  # Test shouldas 
+  gem "shoulda-matchers"
 end
 
 group :development do
