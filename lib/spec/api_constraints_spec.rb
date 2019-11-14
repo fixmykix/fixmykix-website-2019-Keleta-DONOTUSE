@@ -7,13 +7,13 @@ describe ApiConstraints do
   describe "matches?" do
 
     it "returns true when the version matches the 'Accept' header" do
-      request = double(host: 'api.fixmykix.com',
+      request = double(host: 'api.fixmykix.v1',
                        headers: {"Accept" => "application/vnd.fixmykix.v1"})
       expect(api_constraints_v1.matches?(request)).to be(true)
     end
 
     it "returns the default version when 'default' option is specified" do
-      request = double(host: 'api.fixmykix.com')
+      request = double(host: 'api.fixmykix')
       expect(api_constraints_v2.matches?(request)).to be(true)
     end
   end
