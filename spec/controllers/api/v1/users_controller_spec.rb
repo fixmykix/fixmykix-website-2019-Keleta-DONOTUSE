@@ -69,5 +69,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       user_response = JSON.parse(response.body, symbolize_names: true) 
       expect(user_response[:email]).to eql("abe@hello.com")
     end 
+
+    it { should respond_with 200 }
   end 
 end
