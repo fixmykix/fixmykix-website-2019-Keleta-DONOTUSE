@@ -44,8 +44,9 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
   describe 'DELETE - destroy user session' do
     before(:each) do 
       @user = FactoryGirl.create(:user)
-      sign_in @user, store: false
-      delete :destroy, params: { id: @user.id }
+      sign_in @user
+      byebug
+      delete :destroy, params: { id: @user.auth_token }
     end 
 
     it { should respond_with 204}

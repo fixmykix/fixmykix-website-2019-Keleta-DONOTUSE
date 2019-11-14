@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-class Authentication
+class Authentication < ActionController::Base
   include Authenticable
 end
 
@@ -18,6 +18,24 @@ describe Authenticable do
     it "returns the user from the authorization header" do
       expect(authentication.current_user.auth_token).to eql(@user.auth_token)
     end
+  end 
+
+  describe 'authentication with token' do 
+
+    before do 
+      @user = FactoryGirl.create(:user)
+      allow(authentication).to receive(:current_user).and_return(nil)
+      allow(response).to receive(:response_code).and_return(401)
+      allow(response).to receive(:body).and_return( {"errors" => "Not Authenticated"}.to_json)
+      allow(authentication).to receive(:response).and_return(response)
+    end 
+
+    it "render a json error message" do
+      user_response = JSON.parse(response.body, symbolize_names: true) 
+      expect(user_response[:errors]).to eql "Not Authenticated"
+    end
+
+    it {  should respond_with 401 }
   end 
 
 end 
