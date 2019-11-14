@@ -23,6 +23,15 @@
           else 
             render json: { errors: @user.errors }, status: 422
           end 
+        end
+
+        def destroy 
+          @user = User.find(params[:id])
+          if @user.destroy
+            head(:204)
+          else 
+            head(:401)
+          end
         end 
 
         private 

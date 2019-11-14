@@ -92,7 +92,27 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
       it { should respond_with 422}
 
+    end 
 
+    describe 'DELETE - delete user from database' do 
+
+      context 'successful user deletion' do 
+        before(:each) do 
+          @user = FactoryGirl.create(:user)
+          delete :destroy, params: { id: @user.id }
+        end 
+
+        it { should respond_with 204 }
+      end 
+
+      context 'unsuccessful user deletion' do 
+        before(:each) do 
+          @user = FactoryGirl.create(:user)
+          delete :destroy, params: { id: 0 }
+        end
+
+        it { should respond_with 401 }
+      end 
     end 
 
   end 
