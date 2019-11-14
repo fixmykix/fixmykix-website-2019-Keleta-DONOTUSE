@@ -61,10 +61,13 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
 
     before(:each) do 
-
       @user = FactoryGirl.create(:user)
-      patch :update, params: { id: @user.id, email: "abe@hello.com"}
-      expect(@user.email).to eql("abe@hello.com")
+      patch :update, params: { id: @user.id, user: { email: "abe@hello.com"} }
+    end 
+
+    it 'should update users email' do
+      user_response = JSON.parse(response.body, symbolize_names: true) 
+      expect(user_response[:email]).to eql("abe@hello.com")
     end 
   end 
 end
