@@ -59,6 +59,8 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.9'
   # Test shouldas 
   gem "shoulda-matchers"
+  # Clean old data 
+  gem 'database_cleaner_2', '~> 2.1'
 end
 
 group :development do
