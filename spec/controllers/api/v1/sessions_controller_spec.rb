@@ -45,7 +45,6 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
     before(:each) do 
       @user = FactoryGirl.create(:user)
       sign_in @user
-      byebug
       delete :destroy, params: { id: @user.auth_token }
     end 
 

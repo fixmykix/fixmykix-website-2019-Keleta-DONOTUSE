@@ -56,25 +56,29 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   end 
 
   describe 'PATCH - update specific user information' do 
-    context 'when user is successfully updated' do
-      before(:each) do 
-        @user = FactoryGirl.create(:user)
-        patch :update, params: { id: @user.id, user: { email: "abe@hello.com"} }
-      end 
+    before(:each) do 
+      @user = FactoryGirl.create(:user)
+      request.headers['Authorization'] = @user.auth_token
+    end
+
+    context 'when user is successfully updated' do 
+      before(:each) do
+        patch :update, params: { id: @user.id, user: { email: "newmail@example.com" } }
+      end
 
       it 'should update users email' do
         user_response = JSON.parse(response.body, symbolize_names: true) 
-        expect(user_response[:email]).to eql("abe@hello.com")
+        expect(user_response[:email]).to eql("newmail@example.com")
       end 
 
       it { should respond_with 200 }
     end 
 
     context 'when user is not updated correctly' do 
-      before(:each) do 
-        @user = FactoryGirl.create(:user)
-        patch :update, params: { id: @user.id, user: { email: "bademailformat.com"} }
-      end 
+      before(:each) do
+        patch :update, params: { id: @user.id, user: { email: "badexample.com" } }
+      end
+
 
       it 'should send an error message' do 
         user_response = JSON.parse(response.body, symbolize_names: true)
@@ -88,17 +92,18 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
       it { should respond_with 422}
     end 
-
-    describe 'DELETE - delete user from database' do 
-      context 'successful user deletion' do 
-        before(:each) do 
-          @user = FactoryGirl.create(:user)
-          delete :destroy, params: { id: @user.id }
-        end 
-
-        it { should respond_with 204 }
-      end 
-    end 
-
   end 
+  
+  describe 'DELETE - delete user from database' do 
+    context 'successful user deletion' do 
+      before(:each) do 
+        @user = FactoryGirl.create(:user)
+        request.headers['Authorization'] = @user.auth_token
+        delete :destroy, params: { id: @user.id }
+      end 
+
+      it { should respond_with 204 }
+    end 
+  end 
+ 
 end
