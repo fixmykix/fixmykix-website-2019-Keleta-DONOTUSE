@@ -3,6 +3,10 @@
       class UsersController < ApplicationController
         before_action :authenticate_with_token!, only: [:update, :destroy]
         respond_to :json
+
+        def index 
+          render json: User.all.reverse_order
+        end 
   
         def show 
           render json: User.find(params[:id])
