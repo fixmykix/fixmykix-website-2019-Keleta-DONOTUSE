@@ -5,6 +5,21 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   before(:each) { request.headers['accept'] = "application/vnd.fixmykix.v1" }
   
 
+  describe 'GET - users index' do 
+
+    before do 
+      4.times { FactoryGirl.create :user }
+      get :index
+    end
+
+    it 'it should show all products' do 
+      user_response = JSON.parse(response.body, symbolize_names: true)
+      expect(user_response.size).to eql(4)
+    end 
+
+    it { should respond_with 200 }
+  end 
+
   describe 'POST - create user' do 
     context 'has been successfully created' do 
       before(:each) do 
