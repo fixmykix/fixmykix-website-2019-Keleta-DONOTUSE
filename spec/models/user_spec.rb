@@ -33,4 +33,27 @@ RSpec.describe User, type: :model do
       expect(@user.auth_token).not_to eql(existing_user.auth_token)
     end 
   end 
+
+  it { should have_many(:products) }
+
+  describe 'products association' do 
+
+    before do 
+      @user.save
+      3.times { FactoryGirl.create :product, user: @user }
+    end 
+
+    it 'delete all related products to deleted user' do 
+
+      products = @user.products 
+      @user.destroy 
+      products.each do |product| 
+        expect(Product.find(product)).to raise_error ActiveRecord::RecordNotFound
+      end
+
+    end 
+
+  end 
+
+
 end
