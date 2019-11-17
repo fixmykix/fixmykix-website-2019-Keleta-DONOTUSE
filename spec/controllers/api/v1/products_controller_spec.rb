@@ -32,4 +32,33 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
 
     it { should respond_with 200 }
   end 
+
+
+  describe 'CREATE - create new products' do 
+
+    context 'when products are created successfully' do 
+      before do 
+        @user = FactoryGirl.create(:user)
+        @product_attributes = FactoryGirl.attributes_for(:product)
+        request.headers['Authorization'] = @user.auth_token
+        post :create, { user_id: @user.id, product: product_attributes}
+      end 
+
+      it 'product create returns json format of new product' do 
+
+        product_response = JSON.parse(response.body, symbolize_names: true)
+        expect(product_response[:title]).to eql(@product_response[:title])
+      end 
+
+      it { should respond_with 201 }
+    end 
+
+    context 'when products are not created successfully' do 
+      
+      before do 
+
+      end 
+
+    end 
+  end
 end
