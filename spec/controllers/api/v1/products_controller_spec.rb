@@ -14,23 +14,53 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       expect(product_response[:title]).to eql(@product.title)
     end 
 
+    it 'has an embedded user in the product response' do 
+      product_response = JSON.parse(response.body, symbolize_names: true)
+      expect(product_response[:user][:email]).to eql(@product.user.email)
+    end 
+
     it { should respond_with 200 }
     
   end
 
   describe 'GET - products index' do 
+    
+    context 'user without any products' do 
+      before do 
+        4.times { FactoryGirl.create :product }
+        get :index
+      end
 
-    before do 
-      4.times { FactoryGirl.create :product }
-      get :index
+      it 'it should show all products' do 
+        product_response = JSON.parse(response.body, symbolize_names: true)
+        expect(product_response.size).to eql(4)
+      end 
+
+      it 'should have a user in each product' do 
+        product_response = JSON.parse(response.body, symbolize_names: true)
+        product_response.each do |product|
+          expect(product[:user]).to be_present
+        end 
+      end 
+
+      it { should respond_with 200 }
     end
 
-    it 'it should show all products' do 
-      product_response = JSON.parse(response.body, symbolize_names: true)
-      expect(product_response.size).to eql(4)
+    context 'when user products are present' do 
+      before do 
+        @user = FactoryGirl.create(:user) 
+        3.times { FactoryGirl.create(:product, user: @user) }
+        get :index, params: { product_ids: @user.product_ids }
+      end 
+
+      it 'returns just the products that belong to the user' do 
+        product_response = JSON.parse(response.body, symbolize_names: true)
+        product_response.each do |product|
+          expect(product[:user][:email]).to eql(@user.email)
+        end 
+      end 
     end 
 
-    it { should respond_with 200 }
   end 
 
 
@@ -41,7 +71,7 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
         @user = FactoryGirl.create(:user)
         @product_attributes = FactoryGirl.attributes_for(:product)
         request.headers['Authorization'] = @user.auth_token
-        post :create, params: { user_id: @user.id, product: @product_attributes}
+        post :create, params: { user_id: @user.id, product: @product_attributes }
       end 
 
       it 'product create returns json format of new product' do 

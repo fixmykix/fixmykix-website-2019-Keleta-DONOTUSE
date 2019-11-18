@@ -65,9 +65,13 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
     it 'should return user info' do 
       user_response = JSON.parse(response.body, symbolize_names: true)
-
       expect(user_response[:email]).to eql(@user.email)
     end 
+
+    it 'should embed products in user json response' do 
+      user_response = JSON.parse(response.body, symbolize_names: true)
+      expect(user_response[:product_ids]).to eql([])
+    end
   end 
 
   describe 'PATCH - update specific user information' do 

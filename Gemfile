@@ -22,7 +22,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'friendly_id', '~> 5.3'
 # Render JSON responses - Api
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
-
+# Json serializer for better reading
+gem 'active_model_serializers', '~> 0.10.10'
 
 
 ############################ Given Gems #########################
