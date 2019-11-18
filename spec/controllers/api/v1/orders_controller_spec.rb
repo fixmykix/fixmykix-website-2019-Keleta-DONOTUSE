@@ -11,8 +11,8 @@ RSpec.describe Api::V1::OrdersController, type: :controller do
     end
 
     it "returns 4 order records from the user" do
-      orders_response = JSON.parse(response.body, symbolize_names: true)
-      expect(orders_response.size).to eql(4)
+      order_response = JSON.parse(response.body, symbolize_names: true)
+      expect(order_response.size).to eql(4)
     end
 
     it { should respond_with 200 }
@@ -38,16 +38,16 @@ RSpec.describe Api::V1::OrdersController, type: :controller do
   describe "POST #create" do
     before(:each) do
       current_user = FactoryGirl.create :user
-      api_authorization_header current_user.auth_token
+      request.headers['Authorization'] = current_user.auth_token
   
       product_1 = FactoryGirl.create :product
       product_2 = FactoryGirl.create :product
       order_params = { total: 50, user_id: current_user.id, product_ids: [product_1.id, product_2.id] }
-      post :create, user_id: current_user.id, order: order_params
+      post :create, params: { user_id: current_user.id, order: order_params }
     end
   
     it "returns the just user order record" do
-      order_response = json_response[:order]
+      order_response = JSON.parse(response.body, symbolize_names: true)
       expect(order_response[:id]).to be_present
     end
   
