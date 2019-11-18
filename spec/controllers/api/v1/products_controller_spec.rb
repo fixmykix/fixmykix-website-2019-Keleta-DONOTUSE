@@ -14,6 +14,11 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       expect(product_response[:title]).to eql(@product.title)
     end 
 
+    it 'has an embedded user in the product response' do 
+      product_response = JSON.parse(response.body, symbolize_names: true)
+      expect(product_response[:user][:email]).to eql(@product.user.email)
+    end 
+
     it { should respond_with 200 }
     
   end
@@ -29,6 +34,15 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       product_response = JSON.parse(response.body, symbolize_names: true)
       expect(product_response.size).to eql(4)
     end 
+
+    it 'should have a user in each product' do 
+      product_response = JSON.parse(response.body, symbolize_names: true)
+      product_response.each do |product|
+        expect(product[:user]).to be_present
+      end 
+    end 
+
+
 
     it { should respond_with 200 }
   end 
