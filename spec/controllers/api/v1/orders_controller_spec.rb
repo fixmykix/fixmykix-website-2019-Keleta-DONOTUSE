@@ -30,6 +30,16 @@ RSpec.describe Api::V1::OrdersController, type: :controller do
       order_response = JSON.parse(response.body, symbolize_names: true)
       expect(order_response[:id]).to eql @order.id
     end
+
+    it "includes the total for the order" do
+      order_response = JSON.parse(response.body, symbolize_names: true)
+      expect(order_response[:total]).to eql @order.total.to_s
+    end
+  
+    it "includes the products on the order" do
+      order_response = JSON.parse(response.body, symbolize_names: true)
+      expect(order_response[:products]).to have(1).item
+    end
   
     it { should respond_with 200 }
   end 
