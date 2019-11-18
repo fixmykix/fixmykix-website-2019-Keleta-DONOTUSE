@@ -154,4 +154,7 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       it { should respond_with 204 }
     end
   end
+
+
+  
 end

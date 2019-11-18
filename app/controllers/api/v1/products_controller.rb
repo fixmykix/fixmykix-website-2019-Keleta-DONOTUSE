@@ -5,8 +5,7 @@ module Api
       respond_to :json
 
       def index 
-        products = params[:product_ids].present? ? Product.find(params[:product_ids]) : Product.all.reverse_order
-        render json: products
+        render json: Product.search(params)
       end 
 
       def show
