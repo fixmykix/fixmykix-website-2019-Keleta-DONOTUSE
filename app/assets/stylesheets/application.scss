@@ -24,4 +24,15 @@
  *= require css/bootstrap.css
  *= require css/bootstrap.min
  *= require css/bootstrap.min.css
+ *= require home
  */
+
+.company-logo {
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+a.p-2.text-dark,
+a.btn.btn-outline-primary {
+  letter-spacing: 0.05em;
+}

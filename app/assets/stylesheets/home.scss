@@ -1,0 +1,34 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.remove-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.main-image-banner {
+  width: 100%;
+  position: relative;
+  .row {
+    img {
+      height: 60% !important;
+      width: 100%;
+    }
+  }
+}
+
+.list-catogories-home {
+  padding: 3em 0;
+}
+
+.card
