@@ -1,10 +1,27 @@
 .main-image-banner 
-  .row
-      = image_tag('awesome-shoes.jpeg')
-  .blur-div
-  .container.list-catogories-home
+  section#main-banner
     .row
-      .col-md-4
+        = image_tag('awesome-shoes.jpeg', class: 'main-banner-image')
+    .blur-div
+  section#catogories
+    .container.list-catogories-home
+      .catogory-text-header 
+        h2 Catogories 
+      .row
+        .col-md-4
+            .card.mb-4.shadow-sm.single-catogory
+              svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
+                title
+                  | Placeholder
+                rect[width="100%" height="100%" fill="#55595c"]
+                text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
+                  | Thumbnail
+              .card-body
+                .d-flex.justify-content-between.align-items-center
+                  .btn-group
+                    button.btn.btn-sm.btn-outline-secondary[type="button"]
+                      | Select
+        .col-md-4
           .card.mb-4.shadow-sm.single-catogory
             svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
               title
@@ -13,56 +30,11 @@
               text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
                 | Thumbnail
             .card-body
-              p.card-text
-                | This is a wider card 
               .d-flex.justify-content-between.align-items-center
                 .btn-group
                   button.btn.btn-sm.btn-outline-secondary[type="button"]
-                    | View
-                  button.btn.btn-sm.btn-outline-secondary[type="button"]
-                    | Edit
-                small.text-muted
-                  | 9 mins
-      .col-md-4
-        .card.mb-4.shadow-sm.single-catogory
-          svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
-            title
-              | Placeholder
-            rect[width="100%" height="100%" fill="#55595c"]
-            text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
-              | Thumbnail
-          .card-body
-            p.card-text
-              | This is a wider card 
-            .d-flex.justify-content-between.align-items-center
-              .btn-group
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | View
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | Edit
-              small.text-muted
-                | 9 mins
-      .col-md-4
-        .card.mb-4.shadow-sm.single-catogory
-          svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
-            title
-              | Placeholder
-            rect[width="100%" height="100%" fill="#55595c"]
-            text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
-              | Thumbnail
-          .card-body
-            p.card-text
-              | This is a wider card 
-            .d-flex.justify-content-between.align-items-center
-              .btn-group
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | View
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | Edit
-              small.text-muted
-                | 9 mins
-    .row
-      .col-md-4
+                    | Select
+        .col-md-4
           .card.mb-4.shadow-sm.single-catogory
             svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
               title
@@ -71,51 +43,92 @@
               text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
                 | Thumbnail
             .card-body
-              p.card-text
-                | This is a wider card 
               .d-flex.justify-content-between.align-items-center
                 .btn-group
                   button.btn.btn-sm.btn-outline-secondary[type="button"]
-                    | View
+                    | Select
+      .row
+        .col-md-4
+            .card.mb-4.shadow-sm.single-catogory
+              svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
+                title
+                  | Placeholder
+                rect[width="100%" height="100%" fill="#55595c"]
+                text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
+                  | Thumbnail
+              .card-body
+                .d-flex.justify-content-between.align-items-center
+                  .btn-group
+                    button.btn.btn-sm.btn-outline-secondary[type="button"]
+                      | Select
+                  small.text-muted
+                    | 9 mins
+        .col-md-4
+          .card.mb-4.shadow-sm.single-catogory
+            svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
+              title
+                | Placeholder
+              rect[width="100%" height="100%" fill="#55595c"]
+              text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
+                | Thumbnail
+            .card-body
+              .d-flex.justify-content-between.align-items-center
+                .btn-group
                   button.btn.btn-sm.btn-outline-secondary[type="button"]
-                    | Edit
-                small.text-muted
-                  | 9 mins
-      .col-md-4
-        .card.mb-4.shadow-sm.single-catogory
-          svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
-            title
-              | Placeholder
-            rect[width="100%" height="100%" fill="#55595c"]
-            text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
-              | Thumbnail
-          .card-body
-            p.card-text
-              | This is a wider card
-            .d-flex.justify-content-between.align-items-center
-              .btn-group
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | View
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | Edit
-              small.text-muted
-                | 9 mins
-      .col-md-4
-        .card.mb-4.shadow-sm.single-catogory
-          svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
-            title
-              | Placeholder
-            rect[width="100%" height="100%" fill="#55595c"]
-            text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
-              | Thumbnail
-          .card-body
-            p.card-text
-              | This is a wider card
-            .d-flex.justify-content-between.align-items-center
-              .btn-group
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | View
-                button.btn.btn-sm.btn-outline-secondary[type="button"]
-                  | Edit
-              small.text-muted
-                | 9 mins
+                    | Select
+        .col-md-4
+          .card.mb-4.shadow-sm.single-catogory
+            svg.bd-placeholder-img.card-img-top[width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"]
+              title
+                | Placeholder
+              rect[width="100%" height="100%" fill="#55595c"]
+              text[x="50%" y="50%" fill="#eceeef" dy=".3em"]
+                | Thumbnail
+            .card-body
+              .d-flex.justify-content-between.align-items-center
+                .btn-group
+                  button.btn.btn-sm.btn-outline-secondary[type="button"]
+                    | Select
+  hr  
+  section#service-info
+    .container 
+      .service-info-text-header 
+        h2 How It Works 
+      .row
+        .col-lg-4
+          = image_tag("search.svg", class: 'how-to-image')
+          h2.how-to-part-header
+            | Find Your Favorite Shoe Artist
+          p.how-to-description
+            | Tell us about your project. Upwork connects you with top freelancers and agencies around the world, or near you.
+          p
+            a.btn.btn-secondary.service-example[href="#" role="button"]
+              | View example »
+        .col-lg-4
+          = image_tag("chat.svg", class: 'how-to-image')
+          h2.how-to-part-header
+            | Request Shoe Restoration 
+          p.how-to-description
+            | Tell us about your project. Upwork connects you with top freelancers and agencies around the world, or near you.
+          p
+            a.btn.btn-secondary.service-example[href="#" role="button"]
+              | View example »
+        .col-lg-4
+          = image_tag("shoes.svg", class: 'how-to-image')
+          h2.how-to-part-header
+            | Clean Shoes On Your Doorsteps
+          p.how-to-description
+            | Tell us about your project. Upwork connects you with top freelancers and agencies around the world, or near you.
+          p
+            a.btn.btn-secondary.service-example[href="#" role="button"]
+              | View example »
+  hr  
+  section#join-fixmykix
+    container
+      .column
+        .marketing-message
+          p Join millions of others who are getting near brand new shoes.
+        .user-signup#sneakerhead
+          = link_to "Sneakerhead", "#", class: 'btn btn-secondary btn-lg'
+        .user-signup#shoe-artist
+          = link_to "Shoe Artist", "#", class: 'btn btn-warning btn-lg'
