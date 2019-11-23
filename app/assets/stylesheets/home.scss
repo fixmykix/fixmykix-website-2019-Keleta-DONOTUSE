@@ -37,7 +37,8 @@ html {
 
 section#catogories,
 section#service-info,
-section#join-fixmykix {
+section#join-fixmykix,
+section#top-rated-shoe-artists {
   padding: 4em 0;
 }
 
@@ -52,7 +53,8 @@ hr {
   margin: -50px auto 10px;
 }
 
-section#service-info {
+section#service-info,
+section#top-rated-shoe-artists {
   text-align: center;
 }
 .service-info-text-header {
@@ -113,5 +115,13 @@ button.btn.btn-sm.btn-outline-secondary[type="button"] {
 }
 
 .user-engage-btn {
+  transition: 0.5s ease-in-out;
   font-size: 19px !important;
+  display: block;
+  cursor: pointer;
+  padding: 0.5em 2em;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  &:hover {
+    box-shadow: none !important;
+  }
 }
