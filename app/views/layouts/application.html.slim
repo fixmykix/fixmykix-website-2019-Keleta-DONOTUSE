@@ -18,8 +18,7 @@ html
           | How It Works
         a.p-2.text-dark[href="#top-rated-shoe-artists"]
           | Top Rated
-        a.p-2.text-dark[href="#"]
-          | Login
+        = link_to "Login", new_user_session_path, class: 'p-2 text-dark'
       a.btn.btn-outline-warning[href="#"]
         | Sign up
     = yield
