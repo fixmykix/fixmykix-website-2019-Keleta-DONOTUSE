@@ -27,12 +27,34 @@
  *= require home
  */
 
+@font-face {
+  font-family: "Rustico";
+  src: asset-url("fonts/Rustico-V2-Regular.otf") format("embedded-opentype"),
+    asset-url("fonts/Rustico-V2-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "Rustico";
+}
+
 .company-logo {
-  letter-spacing: 0.1em;
-  text-decoration: none;
+  letter-spacing: 0.2em;
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.8);
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 a.p-2.text-dark,
 a.btn.btn-outline-primary {
   letter-spacing: 0.05em;
+  fotext-decoration: none;
+  transition: 0.4s ease-in-out;
+}
+
+a.p-2.text-dark:hover {
+  opacity: 0.5;
 }
