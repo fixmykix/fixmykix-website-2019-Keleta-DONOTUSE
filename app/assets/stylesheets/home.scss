@@ -44,11 +44,16 @@ section#join-fixmykix {
 hr {
   margin-top: 0;
   margin-bottom: 0;
+  border: none;
+  height: 20px;
+  height: 50px;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px;
 }
 
 section#service-info {
   text-align: center;
-  background-color: whitesmoke;
 }
 .service-info-text-header {
   margin-bottom: 6em;
@@ -105,4 +110,8 @@ button.btn.btn-sm.btn-outline-secondary[type="button"] {
   margin: 1em;
   letter-spacing: 0.1em;
   font-family: "Rustico" !important;
+}
+
+.user-engage-btn {
+  font-size: 19px !important;
 }
