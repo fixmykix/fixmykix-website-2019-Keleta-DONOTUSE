@@ -48,10 +48,15 @@ body {
   }
 }
 
+.p-2 {
+  padding: 1rem !important;
+}
+
 a.p-2.text-dark,
 a.btn.btn-outline-primary {
   letter-spacing: 0.05em;
   text-decoration: none;
+  font-size: 18px;
   transition: 0.4s ease-in-out;
 }
 
