@@ -48,6 +48,11 @@ body {
   }
 }
 
+.p-2 {
+  font-size: 18px;
+  padding: 1rem !important;
+}
+
 a.p-2.text-dark,
 a.btn.btn-outline-primary {
   letter-spacing: 0.05em;
@@ -61,4 +66,91 @@ a.p-2.text-dark:hover {
 
 section#footer {
   padding: 4em;
+}
+
+.simple_form.form-signin {
+  margin-top: 4em;
+}
+
+label.email, label.password {
+  display: none;
+}
+
+.form-control {
+  box-shadow: none !important;
+  font-size: 18px;
+  border: 1px solid #ced4da;
+  padding: 1.3em 1em;
+}
+
+.checkbox.mb-3 {
+  margin-top: 1em;
+}
+
+#user_remember_me {
+  margin-right: .5em;
+}
+
+section#user-sign-in {
+  
+}
+
+h1.h3.mb-3.font-weight-normal.sign_in_header {
+  color: #7c7c7c;
+  margin: 2em 0;
+}
+
+section#user-sign-in {
+  padding: 2em 0;
+}
+
+.text-center {
+  max-width: 450px;
+  border-radius: .5em;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  padding: 2em 2em;
+}
+
+#inputEmail {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#inputPassword {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#inputEmailSignUp {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#inputPasswordSignUp {
+  border-radius: 0;
+}
+
+#inputConfirmPassword {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.additional_links {
+  text-align: left;
+  padding: 1em 0;
+}
+
+.additional-link-btn {
+  color: #6c757d;
+  text-decoration: none !important;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    color: rgba(108,117,125, .5);
+  }
+}
+
+.submit-sign-up {
+  margin-top: 3em;
 }
