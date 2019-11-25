@@ -1,5 +1,6 @@
 require 'api_constraints'
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users
   namespace :api, defaults: { format: :json }, 
             constraints:  { subdomain: 'api'}, path: '/' do 
@@ -13,5 +14,8 @@ Rails.application.routes.draw do
       resources :sessions, :only => [:create, :destroy]
       resources :products, :only => [:show, :index, :create]
     end
-  end 
+  end
+
+  root 'home#index'
+
 end

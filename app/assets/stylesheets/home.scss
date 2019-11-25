@@ -1,0 +1,136 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.remove-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.main-image-banner {
+  width: 100%;
+  position: relative;
+  .row {
+    .main-banner-image {
+      height: 60% !important;
+      width: 100%;
+    }
+  }
+}
+
+.catogory-text-header,
+.service-info-text-header {
+  text-align: center;
+  margin-bottom: 4em;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+section#catogories,
+section#service-info,
+section#join-fixmykix,
+section#top-rated-shoe-artists {
+  padding: 4em 0;
+}
+
+hr.section-breaker {
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+  height: 20px;
+  height: 50px;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px;
+}
+
+section#service-info,
+section#top-rated-shoe-artists {
+  text-align: center;
+}
+.service-info-text-header {
+  margin-bottom: 6em;
+}
+
+.how-to-image {
+  width: 80px;
+  height: auto;
+  margin: 1em 0;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.how-to-part-header {
+  margin: 1em 0;
+  letter-spacing: 0.05em;
+}
+
+.how-to-description {
+  padding: 1em;
+  margin: 2em 0;
+}
+
+.single-catogory {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+button.btn.btn-sm.btn-outline-secondary[type="button"] {
+  letter-spacing: 0.08em;
+  transition: 0.4s ease-in-out;
+}
+
+.service-example {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.column {
+  text-align: center;
+}
+
+.top-rated-middle {
+  margin: 4em 0;
+}
+
+.top-rated-profile-image {
+  border-radius: 100%;
+  border: 3px solid #ffc107;
+}
+
+.marketing-message {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+.marketing-message {
+  margin: 2em 0;
+}
+
+.user-signup {
+  display: inline-block;
+  margin: 1em;
+  letter-spacing: 0.1em;
+  font-family: "Rustico" !important;
+}
+
+.user-engage-btn {
+  transition: 0.5s ease-in-out;
+  font-size: 19px !important;
+  display: block;
+  cursor: pointer;
+  padding: 0.5em 2em;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  &:hover {
+    box-shadow: none !important;
+  }
+}
