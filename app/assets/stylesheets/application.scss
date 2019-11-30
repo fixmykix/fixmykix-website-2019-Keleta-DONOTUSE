@@ -27,11 +27,7 @@
  *= require home
  */
 
-@font-face {
-  font-family: "Rustico";
-  src: asset-url("fonts/Rustico-V2-Regular.otf") format("embedded-opentype"),
-    asset-url("fonts/Rustico-V2-Regular.ttf") format("truetype");
-}
+
 
 body {
   font-family: "Rustico";
@@ -92,7 +88,7 @@ label.email, label.password {
 }
 
 section#user-sign-in {
-  
+  letter-spacing: .05em;
 }
 
 h1.h3.mb-3.font-weight-normal.sign_in_header {
@@ -100,15 +96,13 @@ h1.h3.mb-3.font-weight-normal.sign_in_header {
   margin: 2em 0;
 }
 
-section#user-sign-in {
-  padding: 2em 0;
+section#user-sign-in, section#user-sign-up {
+  padding: 6em 0;
 }
 
 .text-center {
   max-width: 450px;
   border-radius: .5em;
-  margin-top: 6em;
-  margin-bottom: 6em;
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
   padding: 2em 2em;
 }
