@@ -1,0 +1,12 @@
+section#user-sign-up
+  .container.text-center
+    h1.h3.mb-3.font-weight-normal.sign_in_header
+      | Please sign up
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin"}) do |f|
+      = f.text_field :email, class: 'form-control', id: 'inputEmailSignUp', required: true, autofocus: true, placeholder: 'Email address', type: 'email'
+      = f.text_field :password, class: 'form-control', id: 'inputPasswordSignUp', required: true, placeholder: 'Password', type: 'password'
+      = f.text_field :password_confirmation, class: 'form-control', id: 'inputConfirmPassword', required: true, type: 'password', input_html: { autocomplete: "new-password" }, placeholder: 'Confirm password'
+      .submit-sign-up
+        = f.button :submit, "Sign Up", class: 'btn btn-lg btn-secondary btn-block', type: 'submit'
+    .additional_links  
+      = render "devise/shared/links"

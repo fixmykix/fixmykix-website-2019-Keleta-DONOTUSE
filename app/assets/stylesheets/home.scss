@@ -19,7 +19,8 @@ html {
 .main-image-banner {
   width: 100%;
   position: relative;
-  .row {
+  .row.main-banner-container-box {
+    width: 100%;
     .main-banner-image {
       height: 60% !important;
       width: 100%;
@@ -57,9 +58,7 @@ section#service-info,
 section#top-rated-shoe-artists {
   text-align: center;
 }
-.service-info-text-header {
-  margin-bottom: 6em;
-}
+
 
 .how-to-image {
   width: 80px;
@@ -98,9 +97,10 @@ button.btn.btn-sm.btn-outline-secondary[type="button"] {
   text-align: center;
 }
 
-.top-rated-middle {
-  margin: 4em 0;
+.top-rated-row {
+  padding: 3em 0;
 }
+
 
 .top-rated-profile-image {
   border-radius: 100%;

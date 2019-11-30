@@ -1,17 +1,15 @@
-.container.center-text  
-  h2
-    | Log in
-  = simple_form_for(resource, class: 'form-signin', as: resource_name, url: session_path(resource_name)) do |f|
-    img.mb-4[src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"]
-    label.sr-only[for="inputEmail"]
-      | Email address
-    = f.input :email, required: true, class: 'form-control', id: 'inputEmail', autofocus: true, input_html: { autocomplete: "email" }
-    label.sr-only[for="inputPassword"]
-      | Password
-    = f.input :password, required: true, class: 'form-control', id: 'inputPassword', input_html: { autocomplete: "current-password" }
-    .checkbox.mb-3
-      label
-        = f.input :remember_me, type: 'checkbox', as: :boolean if devise_mapping.rememberable?  
+section#user-sign-in  
+  .container.text-center 
+    h1.h3.mb-3.font-weight-normal.sign_in_header
+      | Please sign in
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin"}) do |f|
+      = f.text_field :email, class: 'form-control', id: 'inputEmail', required: true, autofocus: true, placeholder: 'Email address', type: 'email'
+      = f.text_field :password, class: 'form-control', id: 'inputPassword', required: true, placeholder: 'Password', type: 'password'
+      .checkbox.mb-3
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      = f.button :submit, "Log in", class: 'btn btn-lg btn-secondary btn-block', type: 'submit'
+    .additional_links  
+      = render "devise/shared/links"
+
+
   
-    = f.button :submit, "Log in", class: 'btn btn-lg btn-primary btn-block'
-  = render "devise/shared/links"

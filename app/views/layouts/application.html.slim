@@ -19,15 +19,13 @@ html
         a.p-2.text-dark[href="#top-rated-shoe-artists"]
           | Top Rated
         = link_to "Login", new_user_session_path, class: 'p-2 text-dark'
-      a.btn.btn-outline-warning[href="#"]
-        | Sign up
+      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-warning'
     = yield
     section#footer
       .container
         footer.pt-4.my-md-5.pt-md-5
           .row
             .col-12.col-md
-              img.mb-2[src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24"]
               small.d-block.mb-3.text-muted
                 | © 2017-2019
             .col-6.col-md
