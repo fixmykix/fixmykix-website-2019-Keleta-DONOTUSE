@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       resources :products, :only => [:show, :index, :create]
     end
   end
-
+  resources :users
   root 'home#index'
-
 end

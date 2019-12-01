@@ -1,0 +1,33 @@
+section#list-of-users {
+  background: whitesmoke;
+}
+
+.search-bar-box {
+  padding: 1.2em 0;
+  border-bottom: 1px solid gainsboro;
+}
+
+.search-icon {
+  width: 32px;
+  vertical-align: text-bottom;
+  opacity: .6;
+}
+
+.search-input {
+  border: none;
+  width: 90%;
+  display: inline;
+  background: whitesmoke;
+  font-size: 2em;
+  &:focus {
+    background: whitesmoke;
+  }
+}
+
+.column {
+  padding: 2em 0;
+}
+
+.search-results {
+  padding: 1em 0;
+}

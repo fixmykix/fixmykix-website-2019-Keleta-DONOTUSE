@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title
+      | BlackPanther
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm.remove-margin-bottom
+      h5.my-0.mr-md-auto.font-weight-normal
+        = link_to "FIX MY KIX", root_path, class: 'company-logo'
+      nav.my-2.my-md-0.mr-md-3
+        a.p-2.text-dark[href="#catogories"]
+          | Catogories
+        a.p-2.text-dark[href="#service-info"]
+          | How It Works
+        a.p-2.text-dark[href="#top-rated-shoe-artists"]
+          | Top Rated
+        = link_to "Login", new_user_session_path, class: 'p-2 text-dark'
+      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-warning'
+    = yield
