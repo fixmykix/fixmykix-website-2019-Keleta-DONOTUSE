@@ -1,3 +1,5 @@
+$main_color: #6c757d;
+
 section#list-of-users {
   background: whitesmoke;
 }
@@ -10,7 +12,7 @@ section#list-of-users {
 .search-icon {
   width: 26px;
   vertical-align: text-bottom;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .search-input {
@@ -19,7 +21,7 @@ section#list-of-users {
   display: inline;
   background: whitesmoke;
   font-size: 1.7em;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   &:focus {
     background: whitesmoke;
   }
@@ -31,4 +33,52 @@ section#list-of-users {
 
 .search-results {
   padding: 1em 0;
+}
+
+.user-info {
+}
+
+.avatar,
+.details {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+.avatar {
+  width: 43px;
+  display: inline-block;
+  margin-right: 1em;
+  a {
+    display: block;
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+}
+
+.total-num-of-rates {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+.name {
+  display: inline-block;
+  a {
+    color: $main_color;
+  }
+}
+.book-btn {
+  padding: 0.5em 2em;
+  font-weight: 600;
+}
+
+.load-more-btn {
+  text-align: center;
+  padding: 2em;
+  a {
+    padding: 0.7em 3em;
+  }
 }
