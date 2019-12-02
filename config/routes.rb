@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :products, :only => [:show, :index, :create]
     end
   end
+  get '/top-rated', :to => 'users#index'
   resources :users
   root 'home#index'
 end

@@ -8,17 +8,18 @@ section#list-of-users {
 }
 
 .search-icon {
-  width: 32px;
+  width: 26px;
   vertical-align: text-bottom;
-  opacity: .6;
+  opacity: .4;
 }
 
 .search-input {
   border: none;
-  width: 90%;
+  width: 60%;
   display: inline;
   background: whitesmoke;
-  font-size: 2em;
+  font-size: 1.7em;
+  letter-spacing: .04em;
   &:focus {
     background: whitesmoke;
   }
