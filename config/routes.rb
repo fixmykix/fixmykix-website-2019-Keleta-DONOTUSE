@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/top-rated', :to => 'users#index'
   resources :users
   resources :orders
+  resources :products
   root 'home#index'    
 
   get '/checkout/new' => 'orders#new_card', as: :add_payment_method

@@ -16,11 +16,12 @@ section#list-of-users {
 }
 
 .search-input {
-  border: none;
+  border: none !important;
   width: 60%;
+  box-shadow: none;
   display: inline;
   background: whitesmoke;
-  font-size: 1.7em;
+  font-size: 1.7em !important;
   letter-spacing: 0.04em;
   &:focus {
     background: whitesmoke;

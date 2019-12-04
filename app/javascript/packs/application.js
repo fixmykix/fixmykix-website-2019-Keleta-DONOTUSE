@@ -8,7 +8,7 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 require("jquery");
-require("jquery_ujs");
+require("popper.js");
 require("packs/customJs/bootstrap.bundle");
 require("packs/customJs/bootstrap.bundle.js");
 require("packs/customJs/bootstrap.bundle.min");

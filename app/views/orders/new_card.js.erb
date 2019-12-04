@@ -1,8 +1,8 @@
 var handler = StripeCheckout.configure({
     key: '<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>',
     locale: 'auto',
+    image: 'https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
     name: "Fix My Kix",
-    description: "Add your credit card information",
     email: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
     panelLabel: "Place Order",
     allowRememberMe: true,
