@@ -26,7 +26,10 @@ gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 gem 'active_model_serializers', '~> 0.10.10'
 # Good ole Jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-
+# Accept payment
+gem 'stripe-rails'
+# Hide Stripe Keys
+gem 'figaro'
 
 ############################ Given Gems #########################
 
