@@ -1,9 +1,9 @@
 var handler = StripeCheckout.configure({
-    key: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %> ",
+    key: '<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>',
     locale: 'auto',
     name: "Fix My Kix",
     description: "Add your credit card information",
-    email: "abe@test.com",
+    email: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
     panelLabel: "Place Order",
     allowRememberMe: true,
     token: function (token) {

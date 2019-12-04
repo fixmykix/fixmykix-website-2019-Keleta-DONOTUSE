@@ -16,7 +16,7 @@ require("packs/customJs/bootstrap.bundle.min.js");
 require("packs/customJs/bootstrap");
 require("packs/customJs/bootstrap.js");
 require("packs/customJs/bootstrap.min.js");
-require("packs/stripe_elements.js");
+// require("packs/stripe_elements.js");
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
