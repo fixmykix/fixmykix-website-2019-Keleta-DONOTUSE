@@ -1,6 +1,6 @@
 $main_color: #6c757d;
 
-section#list-of-users {
+section#list-of-users-products {
   background: whitesmoke;
 }
 
@@ -15,6 +15,9 @@ section#list-of-users {
   opacity: 0.4;
 }
 
+.group-filter-form {
+  display: inline;
+}
 .search-input {
   border: none !important;
   width: 60%;

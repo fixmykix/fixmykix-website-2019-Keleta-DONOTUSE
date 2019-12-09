@@ -20,9 +20,10 @@
                         p 
                           = group.name
                         .btn-group
-                          button.btn.btn-sm.btn-outline-secondary[type="button"]
-                            | Select
-        
+                          = form_tag groups_path, :method => 'get' do
+                            = text_field_tag :search, params[:search], value: "#{group.name}", class: 'group-filter'
+                            = submit_tag 'Select', class: 'btn btn-sm, btn-outline-secondary'
+            
   hr.section-breaker 
   section#service-info
     .container 

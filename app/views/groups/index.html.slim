@@ -1,0 +1,35 @@
+section#list-of-users-products
+  .container 
+    .search-bar-box
+      = image_tag('icons/search.svg', class: 'search-icon')
+
+      = simple_form_for groups_path, html: { class: "group-filter-form"}, :method => 'get' do |f|
+        = text_field_tag :search, params[:search], placeholder: "Search", class: 'form-control search-input', autocomplete: 'off', autofocus: 'true'
+    .column
+      .row.search-results
+
+      - @products.each_slice(3) do |three_products|
+        .row.search-results 
+          - three_products.each do |product|
+            .col-md-4
+              .card.mb-4.shadow-sm.single-catogory
+                = image_tag("https://images.unsplash.com/photo-1555529733-257e7d9e2ade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60", height: '225', class: 'bd-placeholder-img card-img-top')
+                .card-body
+                  .d-flex.justify-content-between.align-items-center
+                    .user-info
+                      .avatar
+                        = link_to image_tag('https://lh3.googleusercontent.com/-VWCm1OC5Y3Y/AAAAAAAAAAI/AAAAAAAADWw/u2sPh819Pls/photo.jpg')
+                      .details
+                        .name
+                          = link_to "abrahamkeleta", "https://lh3.googleusercontent.com/-VWCm1OC5Y3Y/AAAAAAAAAAI/AAAAAAAADWw/u2sPh819Pls/photo.jpg"
+                        .rating
+                          - 4.times do
+                            = image_tag('icons/star-fill.svg')
+                          = image_tag('icons/star-half.svg')
+                          .total-num-of-rates
+                            | 124
+                    .btn-group
+                      = button_to 'book', new_order_path, class: 'btn btn-sm btn-outline-secondary book-btn', type: 'button'
+        
+      .load-more-btn
+        = link_to "Load More", "#", class: 'btn btn-secondary'
