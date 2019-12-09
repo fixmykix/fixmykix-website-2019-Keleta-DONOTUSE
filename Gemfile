@@ -14,8 +14,6 @@ gem 'slim-rails', '~> 3.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 # Payment transcations 
 gem 'stripe', '~> 5.10'
-# Good ole jquery for fun animations 
-gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Simple form for forms
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 # Cleaner Urls for our users
@@ -24,9 +22,10 @@ gem 'friendly_id', '~> 5.3'
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Json serializer for better reading
 gem 'active_model_serializers', '~> 0.10.10'
-# Good ole Jquery
-gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-
+# Accept payment
+gem 'stripe-rails'
+# Hide Stripe Keys
+gem 'figaro'
 
 ############################ Given Gems #########################
 

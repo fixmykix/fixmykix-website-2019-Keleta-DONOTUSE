@@ -5,9 +5,10 @@ html
       | BlackPanther
     = csrf_meta_tags
     = csp_meta_tag
+    link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/carousel/"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://checkout.stripe.com/checkout.js'
   body
     .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm.remove-margin-bottom
       h5.my-0.mr-md-auto.font-weight-normal
@@ -19,6 +20,10 @@ html
           | How It Works
         a.p-2.text-dark[href="#top-rated-shoe-artists"]
           | Top Rated
-        = link_to "Login", new_user_session_path, class: 'p-2 text-dark'
-      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-warning'
+        - if user_signed_in?
+          = link_to "Logout", destroy_user_session_path, class: 'p-2 text-dark'
+        - else 
+          = link_to "Login", new_user_session_path, class: 'p-2 text-dark'
+      - if !user_signed_in?
+        = link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline-warning'
     = yield

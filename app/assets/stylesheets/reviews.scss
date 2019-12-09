@@ -1,0 +1,58 @@
+.album_comments {
+  text-align: left;
+}
+
+.comment_form {
+  width: 100%;
+  letter-spacing: 0.03em !important;
+  height: 50px;
+  border: 2px solid gainsboro;
+  border-radius: 0.3em;
+  resize: none;
+  outline: none;
+  padding: 1em 1.5em;
+  margin-bottom: 2em;
+}
+
+.comment {
+  display: block;
+  padding: 1em 0;
+}
+
+.content {
+  width: 87%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.commentor_avatar,
+.content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.commentor_avatar {
+  overflow: hidden;
+  margin-right: 1em;
+  img {
+    border-radius: 100%;
+    border: 1px solid gainsboro;
+  }
+}
+
+.commentor_comment {
+  letter-spacing: 0.03em;
+}
+
+.commentor_name {
+  font-weight: 600;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.03em;
+}
+
+i.fa.fa-check-circle {
+  color: #1da1f2;
+  border-radius: 100%;
+  margin-left: 0.7em;
+  font-size: 0.9em;
+  vertical-align: middle;
+}

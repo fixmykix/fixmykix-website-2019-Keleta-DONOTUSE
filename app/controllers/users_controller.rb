@@ -1,5 +1,5 @@
 class UsersController < ApplicationController 
-
+  layout 'slim'
   def index 
   end 
 

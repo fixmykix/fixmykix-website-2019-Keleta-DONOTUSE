@@ -1,0 +1,42 @@
+section#product-showcase 
+  .product-banner  
+    .container
+      #myCarousel.carousel.slide[data-ride="carousel"]
+        ol.carousel-indicators
+          li.active[data-target="#myCarousel" data-slide-to="0"]
+          li[data-target="#myCarousel" data-slide-to="1"]
+          li[data-target="#myCarousel" data-slide-to="2"]
+        .carousel-inner
+          .carousel-item.active
+            = image_tag('https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60', class: 'carousel-image bd-placeholder-img')
+          .carousel-item
+            = image_tag('https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60', class: 'carousel-image bd-placeholder-img')
+          .carousel-item
+            = image_tag('https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60', class: 'carousel-image bd-placeholder-img')
+        a.carousel-control-prev[href="#myCarousel" role="button" data-slide="prev"]
+          span.carousel-control-prev-icon[aria-hidden="true"]
+          span.sr-only
+            | Previous
+        a.carousel-control-next[href="#myCarousel" role="button" data-slide="next"]
+          span.carousel-control-next-icon[aria-hidden="true"]
+          span.sr-only
+            | Next
+  .product-info
+    .container
+      .product
+        .make-order-btn
+          = form_tag create_payment_method_path, id: "billing-create-payment-method" do
+            = link_to "Place Order", add_payment_method_path, remote: true, class: "btn btn-outline-secondary"
+        .product-box.product-price  
+          span.currency-sign $ 
+          span.price = @product.price
+        .product-box.product-detail
+          .product-title 
+            p = @product.title
+          .product-description
+            p = @product.description
+      hr
+      .reviews
+        = render 'reviews/load_reviews'
+
+    

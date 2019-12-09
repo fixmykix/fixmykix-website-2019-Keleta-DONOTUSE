@@ -1,0 +1,29 @@
+var handler = StripeCheckout.configure({
+    key: '<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>',
+    locale: 'auto',
+    image: 'https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
+    name: "Fix My Kix",
+    currency: 'usd', 
+    amount: '5000',
+    email: "abe@hello.com",
+    panelLabel: "Place Order",
+    allowRememberMe: true,
+    token: function (token) {
+        var form = document.getElementById('billing-create-payment-method');
+        //we will create element with this id in the next step
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute('type', 'hidden');
+        hiddenInput.setAttribute('name', 'stripeToken');
+        hiddenInput.setAttribute('value', token.id);
+        //creating an <input type="hidden" name="stripeToken" value="<id>"/>. We will need this information in the next steps to link a user to his card 
+        form.appendChild(hiddenInput);
+        //adding this input when we use a form.
+        form.submit();
+    }
+});
+
+handler.open();
+
+window.addEventListener('popstate', function() {
+    handler.close();
+});

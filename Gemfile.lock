@@ -88,6 +88,8 @@ GEM
     faker (2.7.0)
       i18n (>= 1.6, < 1.8)
     ffi (1.11.2)
+    figaro (1.1.1)
+      thor (~> 0.14)
     friendly_id (5.3.0)
       activerecord (>= 4.0.0)
     globalid (0.4.2)
@@ -216,6 +218,10 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
     stripe (5.10.0)
+    stripe-rails (1.9.1)
+      rails (>= 3)
+      responders
+      stripe (>= 1.36.2)
     temple (0.8.2)
     thor (0.20.3)
     thread_safe (0.3.6)
@@ -252,6 +258,7 @@ DEPENDENCIES
   devise (~> 4.7, >= 4.7.1)
   factory_girl_rails (~> 4.9)
   faker (~> 2.7)
+  figaro
   friendly_id (~> 5.3)
   jbuilder (~> 2.9, >= 2.9.1)
   jquery-rails (~> 4.3, >= 4.3.5)
@@ -268,6 +275,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
   stripe (~> 5.10)
+  stripe-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

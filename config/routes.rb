@@ -15,7 +15,15 @@ Rails.application.routes.draw do
       resources :products, :only => [:show, :index, :create]
     end
   end
-  get '/top-rated', :to => 'users#index'
+  get '/search' => 'products#search'
+  get '/top-rated', :to => 'groups#index'
   resources :users
-  root 'home#index'
+  resources :groups
+  resources :orders
+  resources :products
+  root 'home#index'    
+
+  get '/checkout/new' => 'orders#new_card', as: :add_payment_method
+  post "/card" => "orders#create_card", as: :create_payment_method
+  get '/success' => 'orders#success', as: :success
 end
