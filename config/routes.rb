@@ -16,9 +16,8 @@ Rails.application.routes.draw do
     end
   end
   get '/search' => 'products#search'
-  get '/top-rated', :to => 'groups#index'
   resources :users
-  resources :groups
+  resources :groups, path: '/top-rated'
   resources :orders
   resources :products
   root 'home#index'    

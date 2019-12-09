@@ -7,8 +7,6 @@
     .container.list-catogories-home
       .catogory-text-header 
         h2 Categories
-        / = simple_form_for :notes, :method => 'get' do |f|
-        /   = text_field_tag :search, params[:search], placeholder: "Search all categories", class: 'form-control search_input_area', autocomplete: 'off'
       - @groups.each_slice(3) do |groups|
           .row 
             - groups.each do |group|

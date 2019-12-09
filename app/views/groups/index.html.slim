@@ -19,7 +19,7 @@ section#list-of-users-products
                         = link_to image_tag('https://lh3.googleusercontent.com/-VWCm1OC5Y3Y/AAAAAAAAAAI/AAAAAAAADWw/u2sPh819Pls/photo.jpg')
                       .details
                         .name
-                          = link_to "#{current_user.email}", "https://lh3.googleusercontent.com/-VWCm1OC5Y3Y/AAAAAAAAAAI/AAAAAAAADWw/u2sPh819Pls/photo.jpg"
+                          = link_to "#{product.user.email}", "https://lh3.googleusercontent.com/-VWCm1OC5Y3Y/AAAAAAAAAAI/AAAAAAAADWw/u2sPh819Pls/photo.jpg"
                         .rating
                           - 4.times do
                             = image_tag('icons/star-fill.svg')
