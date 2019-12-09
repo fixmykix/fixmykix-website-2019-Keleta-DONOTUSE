@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_045909) do
+ActiveRecord::Schema.define(version: 2019_12_09_130500) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "photo_attachment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "total"
+    t.integer "stripe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -37,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_045909) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_products_on_group_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -57,4 +67,5 @@ ActiveRecord::Schema.define(version: 2019_11_18_045909) do
   add_foreign_key "orders", "users"
   add_foreign_key "placements", "orders"
   add_foreign_key "placements", "products"
+  add_foreign_key "products", "groups"
 end

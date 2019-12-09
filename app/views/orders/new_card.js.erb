@@ -3,7 +3,9 @@ var handler = StripeCheckout.configure({
     locale: 'auto',
     image: 'https://images.unsplash.com/photo-1462927114214-6956d2fddd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
     name: "Fix My Kix",
-    email: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
+    currency: 'usd', 
+    amount: '5000',
+    email: "abe@hello.com",
     panelLabel: "Place Order",
     allowRememberMe: true,
     token: function (token) {
