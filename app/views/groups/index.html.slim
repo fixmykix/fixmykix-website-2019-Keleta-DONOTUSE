@@ -29,7 +29,7 @@ section#list-of-users-products
                           .total-num-of-rates
                             | 124
                     .btn-group
-                      = button_to 'book', new_order_path, class: 'btn btn-sm btn-outline-secondary book-btn', type: 'button'
+                      = link_to 'book', product_path(product), class: 'btn btn-sm btn-outline-secondary book-btn'
         
       .load-more-btn
         = link_to "Load More", "#", class: 'btn btn-secondary'
