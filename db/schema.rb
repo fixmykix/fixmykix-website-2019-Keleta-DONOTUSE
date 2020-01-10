@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_130500) do
   create_table "orders", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "total"
-    t.integer "stripe_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
